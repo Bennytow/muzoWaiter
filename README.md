@@ -10,7 +10,7 @@ Sistema de pedidos para un local con productos personalizables.
 •	Cierre de caja y reporte de ventas.
 
 
-##Requisitos Funcionales (RF)
+#Requisitos Funcionales (RF)
 
 RF01: El sistema debe permitir registrar productos base (platos y bebidas) asociados a un menú configurable.
 
