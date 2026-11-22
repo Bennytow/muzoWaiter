@@ -1,5 +1,5 @@
 
-#Muzo Waiter
+# Muzo Waiter
 
 ### Sistema de Gestión de Pedidos para Cafeterías y Restaurantes
 
@@ -11,7 +11,7 @@ El proyecto busca aplicar los principios de **Programación Orientada a Objetos 
 
 ---
 
-## 📋 1. Descripción del proyecto
+##  1. Descripción del proyecto
 
 **Propuesta 3: Cafetería o restaurante**
 
@@ -21,20 +21,20 @@ También contempla notificaciones automáticas entre los diferentes roles del re
 
 ### Funcionalidades previstas
 
-- 🍔 Registro y administración de platos y bebidas.
-- 🧀 Personalización de productos mediante adiciones.
-- 🍟 Construcción de combos paso a paso.
-- 📖 Administración de un menú configurable.
-- 🧾 Registro de pedidos por mesa o domicilio.
-- 👨‍🍳 Notificaciones automáticas a cocina, caja y meseros.
-- 🏷️ Aplicación de promociones por horario o día.
-- 💰 Cierre de caja y generación de reportes.
-- 💻 Interfaz por consola.
-- 🖥️ Interfaz gráfica sencilla.
+-  Registro y administración de platos y bebidas.
+-  Personalización de productos mediante adiciones.
+-  Construcción de combos paso a paso.
+-  Administración de un menú configurable.
+-  Registro de pedidos por mesa o domicilio.
+-  Notificaciones automáticas a cocina, caja y meseros.
+-  Aplicación de promociones por horario o día.
+-  Cierre de caja y generación de reportes.
+-  Interfaz por consola.
+-  Interfaz gráfica sencilla.
 
 ---
 
-## 🎯 2. Objetivos
+##  2. Objetivos
 
 ### Objetivo general
 
@@ -55,7 +55,7 @@ Desarrollar un sistema de gestión de pedidos para cafeterías y restaurantes me
 
 ---
 
-## ⚙️ 3. Tecnologías
+##  3. Tecnologías
 
 | Tecnología | Propósito |
 |------------|-----------|
@@ -70,7 +70,7 @@ Desarrollar un sistema de gestión de pedidos para cafeterías y restaurantes me
 
 ---
 
-## 🏗️ 4. Arquitectura del sistema
+##  4. Arquitectura del sistema
 
 El sistema se plantea bajo una arquitectura modular que separa las responsabilidades de presentación, negocio y persistencia.
 
@@ -138,7 +138,7 @@ muzoWaiter/
 
 ---
 
-## 🧩 5. Patrones de diseño
+##  5. Patrones de diseño
 
 El proyecto contempla la aplicación de patrones de diseño pertenecientes a tres categorías diferentes.
 
@@ -233,7 +233,7 @@ La implementación definitiva de estos patrones dependerá del diseño y las cla
 
 ---
 
-## 📌 6. Requisitos funcionales
+##  6. Requisitos funcionales
 
 | Código | Descripción |
 |--------|-------------|
@@ -247,7 +247,7 @@ La implementación definitiva de estos patrones dependerá del diseño y las cla
 
 ---
 
-## 🔒 7. Requisitos no funcionales
+##  7. Requisitos no funcionales
 
 | Código | Descripción |
 |--------|-------------|
@@ -268,7 +268,7 @@ La implementación definitiva de estos patrones dependerá del diseño y las cla
 
 ---
 
-## 🚀 8. Instalación y ejecución
+##  8. Instalación y ejecución
 
 ### Requisitos previos
 
@@ -379,7 +379,7 @@ Ambas interfaces deben compartir los mismos servicios y reglas de negocio.
 
 ---
 
-## 📊 10. Diagramas UML
+##  10. Diagramas UML
 
 La documentación del proyecto debe incluir los siguientes diagramas:
 
@@ -396,7 +396,7 @@ Los diagramas definitivos deben reflejar las clases, métodos y relaciones exist
 
 ---
 
-## 🧪 11. Pruebas unitarias
+##  11. Pruebas unitarias
 
 Se contempla el uso de JUnit 5 para verificar el funcionamiento de las clases principales y los patrones implementados.
 
@@ -434,7 +434,7 @@ mvn test
 
 ---
 
-## 📚 12. Documento de diseño
+##  12. Documento de diseño
 
 El documento de diseño debe justificar las decisiones arquitectónicas tomadas durante el desarrollo.
 
@@ -459,7 +459,7 @@ El documento finalizará con las conclusiones, los aprendizajes obtenidos y las 
 
 ---
 
-## 🎓 13. Sustentación del proyecto
+##  13. Sustentación del proyecto
 
 La sustentación académica tendrá una duración aproximada de **10 minutos por grupo**.
 
@@ -477,7 +477,7 @@ El diseño debe permitir demostrar su extensibilidad mediante cambios de requisi
 
 ---
 
-## 📈 14. Estado del desarrollo
+##  14. Estado del desarrollo
 
 La siguiente lista permite registrar el progreso del proyecto. Las casillas deben marcarse únicamente cuando la funcionalidad esté terminada y verificada.
 
@@ -508,7 +508,7 @@ La siguiente lista permite registrar el progreso del proyecto. Las casillas debe
 
 ---
 
-## 🔮 15. Posibles mejoras futuras
+##  15. Posibles mejoras futuras
 
 - Integración con una base de datos relacional.
 - Administración de inventario.
@@ -522,7 +522,7 @@ La siguiente lista permite registrar el progreso del proyecto. Las casillas debe
 
 ---
 
-## 📝 16. Conclusiones
+##  16. Conclusiones
 
 Muzo Waiter busca demostrar cómo los patrones de diseño permiten resolver problemas concretos en un sistema de gestión de pedidos.
 
@@ -532,7 +532,7 @@ El proyecto también permite fortalecer conocimientos de programación orientada
 
 ---
 
-## 👥 17. Equipo de desarrollo
+##  17. Equipo de desarrollo
 
 **Proyecto académico de Ingeniería de Software**
 
@@ -542,7 +542,7 @@ Universidad Libre — Ingeniería de Sistemas
 
 ---
 
-## 📄 18. Licencia
+##  18. Licencia
 
 La licencia del proyecto está pendiente de definición.
 
