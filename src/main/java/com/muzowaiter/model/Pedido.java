@@ -61,6 +61,11 @@ public class Pedido {
             );
         }
 
+        if (nuevoEstado == EstadoPedido.EN_PREPARACION
+                && productos.isEmpty()) {
+            throw new IllegalStateException("El pedido esta vacio");
+        }
+
         this.estado = nuevoEstado;
     }
 }

@@ -9,7 +9,7 @@ public class ProductoBase implements Producto {
         if (descripcion == null || descripcion.isBlank()) {
             throw new IllegalArgumentException("La descripcion es obligatoria");
         }
-        if (precio < 0) {
+        if (!Double.isFinite(precio) || precio < 0) {
             throw new IllegalArgumentException("El precio no puede ser negativo");
         }
         this.descripcion = descripcion;

@@ -61,7 +61,7 @@ public final class CajaRegistradora {
         }
 
         if (!Double.isFinite(esperado) || esperado < 0
-                || !Double.isFinite(monto)
+                || !Double.isFinite(monto) || monto < 0
                 || Math.abs(monto - esperado) > 0.009) {
             throw new IllegalArgumentException(
                     "Monto incorrecto. Total esperado: $" + esperado);
@@ -83,13 +83,15 @@ public final class CajaRegistradora {
         return List.copyOf(pagos);
     }
 
-    public synchronized ReporteCaja cerrarCaja() {
+    public synchronized ReporteCaja cerrarCaja() throws java.io.IOException {
         if (!abierta) {
             throw new IllegalStateException("Caja ya cerrada");
         }
 
         ReporteCaja reporte = new ReporteCaja(
                 fechaCaja, pagos, obtenerTotal());
+
+        ExportadorReporte.exportar(reporte);
 
         abierta = false;
         return reporte;
@@ -106,7 +108,6 @@ public final class CajaRegistradora {
         }
 
         pagos.clear();
-        cobrados.clear();
         fechaCaja = LocalDate.now();
         abierta = true;
     }

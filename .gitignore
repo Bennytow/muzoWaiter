@@ -6,3 +6,10 @@ out/
 out/
 reportes/
 *.class
+
+# Maven
+target/
+
+# Archivos temporales
+*.bak
+sources.txt

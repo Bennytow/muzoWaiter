@@ -305,7 +305,7 @@ public class ConsolaApp {
         System.out.println(reporte.generarTexto());
 
         System.out.println("Reporte guardado en: "
-                + ExportadorReporte.exportar(reporte));
+                + java.nio.file.Path.of("reportes", "cierre_" + reporte.fecha() + ".txt"));
     }
 
     private void abrirCaja() {

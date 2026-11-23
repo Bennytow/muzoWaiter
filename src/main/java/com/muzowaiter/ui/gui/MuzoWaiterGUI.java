@@ -372,7 +372,7 @@ public class MuzoWaiterGUI extends JFrame {
     private void cerrarCaja() {
         try {
             ReporteCaja reporte = caja.cerrarCaja();
-            Path archivo = ExportadorReporte.exportar(reporte);
+            Path archivo = Path.of("reportes", "cierre_" + reporte.fecha() + ".txt");
 
             JOptionPane.showMessageDialog(this,
                     reporte.generarTexto()

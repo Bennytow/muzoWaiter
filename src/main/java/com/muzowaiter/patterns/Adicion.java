@@ -9,7 +9,7 @@ public class Adicion extends ProductoDecorator {
 
     public Adicion(Producto producto, String nombre, double precio) {
         super(producto);
-        if (nombre == null || nombre.isBlank() || precio < 0) {
+        if (nombre == null || nombre.isBlank() || !Double.isFinite(precio) || precio < 0) {
             throw new IllegalArgumentException("Adicion invalida");
         }
         this.nombre = nombre;

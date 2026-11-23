@@ -4,8 +4,7 @@ import com.muzowaiter.model.ReporteCaja;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.*;
 
 public class ExportadorReporte {
 
@@ -16,19 +15,14 @@ public class ExportadorReporte {
         Files.createDirectories(carpeta);
 
         Path archivo = carpeta.resolve(
-                "cierre_" + reporte.fecha() + ".txt"
-        );
-
-        if (Files.exists(archivo)) {
-            throw new IOException(
-                    "Ya existe un reporte para esta fecha: " + archivo
-            );
-        }
+                "cierre_" + reporte.fecha() + ".txt");
 
         Files.writeString(
                 archivo,
                 reporte.generarTexto(),
-                StandardCharsets.UTF_8
+                StandardCharsets.UTF_8,
+                StandardOpenOption.CREATE_NEW,
+                StandardOpenOption.WRITE
         );
 
         return archivo;
