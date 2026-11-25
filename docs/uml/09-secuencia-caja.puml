@@ -1,0 +1,47 @@
+@startuml
+title Secuencia - Pago y cierre de caja
+
+actor Cajero
+participant Interfaz as UI
+participant Pedido
+participant EstrategiaPromocion as Strategy
+participant CajaRegistradora as Caja
+participant ExportadorReporte as Exportador
+
+Cajero -> UI : Cobrar pedido
+UI -> Pedido : getTotal()
+Pedido --> UI : total
+
+opt Promocion seleccionada
+    UI -> Strategy : aplicarDescuento(total, fecha)
+    Strategy --> UI : total final
+end
+
+UI -> Caja : getInstancia()
+Caja --> UI : instancia
+
+UI -> Caja : registrarPago(pedido, total, metodo, promocion)
+
+alt Pago valido
+    Caja -> Pedido : getEstado()
+    Caja -> Caja : Validar monto y pago duplicado
+    Caja -> Caja : Registrar pago
+    Caja --> UI : Pago registrado
+else Pago invalido
+    Caja --> UI : Excepcion
+end
+
+Cajero -> UI : Cerrar caja
+UI -> Caja : cerrarCaja()
+Caja -> Exportador : exportar(reporte)
+
+alt Exportacion exitosa
+    Exportador --> Caja : Ruta del archivo
+    Caja -> Caja : Confirmar cierre
+    Caja --> UI : ReporteCaja
+else Error de escritura
+    Exportador --> Caja : IOException
+    Caja --> UI : Error, caja permanece abierta
+end
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+title Patron Decorator
+
+interface Producto {
+    +getDescripcion(): String
+    +getPrecio(): double
+}
+
+class ProductoBase {
+    -descripcion: String
+    -precio: double
+    +getDescripcion(): String
+    +getPrecio(): double
+}
+
+abstract class ProductoDecorator {
+    #producto: Producto
+}
+
+class Adicion {
+    -nombre: String
+    -precio: double
+    +getDescripcion(): String
+    +getPrecio(): double
+}
+
+Producto <|.. ProductoBase
+Producto <|.. ProductoDecorator
+ProductoDecorator <|-- Adicion
+ProductoDecorator --> Producto : envuelve
+
+@enduml

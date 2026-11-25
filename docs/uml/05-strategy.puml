@@ -1,0 +1,26 @@
+@startuml
+title Patron Strategy
+
+interface EstrategiaPromocion {
+    +aplicarDescuento(double, LocalDateTime): double
+}
+
+class PromocionHorario {
+    +aplicarDescuento(double, LocalDateTime): double
+}
+
+class PromocionDia {
+    +aplicarDescuento(double, LocalDateTime): double
+}
+
+class ServicioPromociones {
+    -estrategia: EstrategiaPromocion
+    +establecerEstrategia(EstrategiaPromocion)
+    +calcularTotal(double, LocalDateTime): double
+}
+
+EstrategiaPromocion <|.. PromocionHorario
+EstrategiaPromocion <|.. PromocionDia
+ServicioPromociones --> EstrategiaPromocion
+
+@enduml

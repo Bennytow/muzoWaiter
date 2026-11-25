@@ -1,0 +1,29 @@
+@startuml
+title Patron Builder
+
+interface Producto {
+    +getDescripcion(): String
+    +getPrecio(): double
+}
+
+class ComboBuilder {
+    -nombre: String
+    -productos: List
+    +agregarProducto(Producto): ComboBuilder
+    +construir(): Combo
+}
+
+class Combo {
+    -nombre: String
+    -productos: List
+    +getDescripcion(): String
+    +getPrecio(): double
+    +getProductos(): List
+}
+
+Producto <|.. Combo
+ComboBuilder ..> Combo : construye
+ComboBuilder --> Producto
+Combo o-- "1..*" Producto
+
+@enduml

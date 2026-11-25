@@ -1,0 +1,23 @@
+@startuml
+title Patron Singleton
+
+class CajaRegistradora <<Singleton>> {
+    {static} -INSTANCIA: CajaRegistradora
+    -pagos: List
+    -abierta: boolean
+    -CajaRegistradora()
+    {static} +getInstancia(): CajaRegistradora
+    +registrarPago(Pedido, double, String)
+    +obtenerTotal(): double
+    +cerrarCaja(): ReporteCaja
+    +abrirCaja(): void
+}
+
+class ConsolaApp
+class MuzoWaiterGUI
+
+CajaRegistradora --> CajaRegistradora : instancia unica
+ConsolaApp ..> CajaRegistradora : getInstancia()
+MuzoWaiterGUI ..> CajaRegistradora : getInstancia()
+
+@enduml

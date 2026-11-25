@@ -1,0 +1,36 @@
+@startuml
+title muzoWaiter - Arquitectura en capas
+top to bottom direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Capa de presentacion" #DCEBFA {
+    package "ui.console" as Console
+    package "ui.gui" as GUI
+}
+
+package "Capa de servicios y logica" #E1F2E5 {
+    package "service" as Service
+    package "patterns" as Patterns
+}
+
+package "Capa de dominio" #FFF1D6 {
+    package "model" as Model
+}
+
+folder "reportes/" as Reportes
+
+Console ..> Service
+GUI ..> Service
+Console ..> Patterns
+GUI ..> Patterns
+Console ..> Model
+GUI ..> Model
+
+Service ..> Patterns
+Service ..> Model
+Patterns ..> Model
+
+Service ..> Reportes : Exportacion TXT
+
+@enduml

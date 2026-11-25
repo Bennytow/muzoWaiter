@@ -1,0 +1,28 @@
+@startuml
+title Patron Observer
+
+class GestorPedidos {
+    -observadores: List
+    +agregarObservador(ObservadorPedido)
+    +crearPedido(): Pedido
+    +cambiarEstado(Pedido, EstadoPedido)
+    -notificar(Pedido)
+}
+
+interface ObservadorPedido {
+    +actualizar(Pedido): void
+}
+
+class NotificadorCocina
+class NotificadorCaja
+class NotificadorMesero
+class Pedido
+
+GestorPedidos o-- "0..*" ObservadorPedido
+GestorPedidos --> Pedido
+
+ObservadorPedido <|.. NotificadorCocina
+ObservadorPedido <|.. NotificadorCaja
+ObservadorPedido <|.. NotificadorMesero
+
+@enduml
