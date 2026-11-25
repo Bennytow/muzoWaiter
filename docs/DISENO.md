@@ -15,9 +15,9 @@ arquitectónico que favorezca la reutilización del código.
 
 ## 3. Estilo arquitectónico
 
-### Arquitectura en capas
+### Arquitectura monolítica en capas
 
-Se seleccionó una arquitectura en capas flexible porque
+Se seleccionó una arquitectura monolítica organizada en capas flexibles porque
 permite separar la presentación, los servicios y el modelo
 de dominio.
 

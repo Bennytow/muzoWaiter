@@ -2,7 +2,7 @@
 
 Sistema de gestión de pedidos para cafeterías y restaurantes,
 desarrollado en Java 21 mediante patrones de diseño y una
-arquitectura en capas.
+arquitectura monolítica organizada en capas.
 
 ## Descripción del proyecto
 
@@ -39,7 +39,7 @@ gráfica Swing que reutilizan el mismo núcleo de negocio.
 
 ## Arquitectura
 
-El sistema utiliza una arquitectura en capas flexible.
+El sistema utiliza una arquitectura monolítica organizada en capas flexibles.
 
 | Capa | Responsabilidad |
 |---|---|
@@ -135,3 +135,7 @@ Universidad Libre, Colombia.
 ## Repositorio
 
 https://github.com/Bennytow/muzoWaiter
+
+## Estilo arquitectónico
+
+[Arquitectura monolítica en capas](docs/ARQUITECTURA.md)
