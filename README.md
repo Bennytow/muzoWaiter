@@ -1,4 +1,4 @@
-# muzoWaiter
+# Muzo Waiter
 
 Sistema de gestión de pedidos para cafeterías y restaurantes,
 desarrollado en Java 21 mediante patrones de diseño y una
