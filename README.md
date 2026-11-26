@@ -83,19 +83,6 @@ Requisitos: JDK 21, Maven y Git.
 Las pruebas verifican el comportamiento de los cinco patrones
 de diseño y diferentes reglas de negocio.
 
-## Diagramas UML
-
-[Consultar todos los diagramas](docs/uml/README.md)
-
-![Diagrama general](docs/uml/imagenes/02-clases-general.png)
-
-## Documentación
-
-- [Documento técnico de diseño](docs/DISENO.md)
-- [Manual de usuario](docs/MANUAL_USUARIO.md)
-- [Guion de demostración](docs/GUION_VIDEO.md)
-- [Diagramas UML](docs/uml/README.md)
-
 ## Limitaciones
 
 - Los pedidos y pagos activos se mantienen en memoria.
@@ -105,12 +92,6 @@ de diseño y diferentes reglas de negocio.
 - No existe autenticación diferenciada por roles.
 - El menú de productos está definido en el código.
 
-## Contexto académico
-
-Proyecto desarrollado para Ingeniería de Software.
-
-Programa de Ingeniería de Sistemas.
-Universidad Libre, Colombia.
 
 ## Repositorio
 
