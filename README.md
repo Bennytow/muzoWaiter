@@ -60,26 +60,6 @@ El sistema utiliza una arquitectura monolítica organizada en capas flexibles.
 | Builder | Creacional | Construcción de combos |
 | Singleton | Creacional | Instancia de caja registradora |
 
-## Estructura del proyecto
-
-    muzoWaiter/
-    ├── pom.xml
-    ├── README.md
-    ├── docs/
-    │   ├── DISENO.md
-    │   ├── MANUAL_USUARIO.md
-    │   ├── GUION_VIDEO.md
-    │   └── uml/
-    └── src/
-        ├── main/java/com/muzowaiter/
-        │   ├── model/
-        │   ├── patterns/
-        │   ├── service/
-        │   └── ui/
-        │       ├── console/
-        │       └── gui/
-        └── test/java/com/muzowaiter/
-
 ## Instalación
 
 Requisitos: JDK 21, Maven y Git.
