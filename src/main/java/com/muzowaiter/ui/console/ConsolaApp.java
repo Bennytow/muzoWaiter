@@ -239,6 +239,7 @@ public class ConsolaApp {
     private void seleccionarPromocion() {
         System.out.println("1. Descuento 10% de 14:00 a 17:00");
         System.out.println("2. Descuento 15% los miercoles");
+        System.out.println("3. Promocion especial 20%");
         System.out.println("0. Sin promocion");
 
         int opcion = leerEntero("Opcion: ");
@@ -246,6 +247,7 @@ public class ConsolaApp {
         switch (opcion) {
             case 1 -> promocion = new PromocionHorario();
             case 2 -> promocion = new PromocionDia();
+            case 3 -> promocion = new PromocionEspecial();
             case 0 -> promocion = null;
             default -> {
                 System.out.println("Opcion invalida.");
@@ -253,20 +255,37 @@ public class ConsolaApp {
             }
         }
 
-        System.out.println("Promocion actualizada.");
+        double porcentaje = promocion == null ? 0 :
+                100 - promocion.aplicarDescuento(
+                        100, LocalDateTime.now());
+
+        if (promocion == null) {
+            System.out.println("Sin promocion seleccionada.");
+        } else if (porcentaje > 0) {
+            System.out.printf(
+                    "Promocion activa: %.0f%% de descuento%n",
+                    porcentaje);
+        } else {
+            System.out.println(
+                    "Promocion seleccionada, pero inactiva "
+                    + "en este dia u horario.");
+        }
     }
 
     private void cobrar() {
         Pedido pedido = buscarPedido();
 
-        double total = pedido.getTotal();
+        double subtotal = pedido.getTotal();
+        double total = subtotal;
 
         if (promocion != null) {
             total = promocion.aplicarDescuento(
                     total, LocalDateTime.now());
         }
 
-        System.out.println("Total a pagar: $" + total);
+        System.out.printf("Subtotal: $%.2f%n", subtotal);
+        System.out.printf("Descuento: $%.2f%n", subtotal - total);
+        System.out.printf("Total a pagar: $%.2f%n", total);
         System.out.println("1. Efectivo");
         System.out.println("2. Tarjeta");
         System.out.println("3. Transferencia");

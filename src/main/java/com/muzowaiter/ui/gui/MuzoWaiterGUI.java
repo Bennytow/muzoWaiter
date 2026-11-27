@@ -302,7 +302,8 @@ public class MuzoWaiterGUI extends JFrame {
         String[] opciones = {
             "Sin promocion",
             "10% de 14:00 a 17:00",
-            "15% los miercoles"
+            "15% los miercoles",
+            "Promocion especial 20%"
         };
 
         int opcion = JOptionPane.showOptionDialog(
@@ -315,17 +316,31 @@ public class MuzoWaiterGUI extends JFrame {
             case 0 -> promocion = null;
             case 1 -> promocion = new PromocionHorario();
             case 2 -> promocion = new PromocionDia();
+            case 3 -> promocion = new PromocionEspecial();
             default -> { return; }
         }
 
-        JOptionPane.showMessageDialog(this,
-                "Promocion actualizada");
+        double porcentaje = promocion == null ? 0 :
+                100 - promocion.aplicarDescuento(
+                        100, LocalDateTime.now());
+
+        String mensaje = promocion == null
+                ? "Sin promocion seleccionada."
+                : porcentaje > 0
+                    ? String.format(
+                        "Promocion activa: %.0f%% de descuento",
+                        porcentaje)
+                    : "Promocion seleccionada, pero inactiva "
+                        + "en este dia u horario.";
+
+        JOptionPane.showMessageDialog(this, mensaje);
     }
 
     private void cobrar() {
         Pedido pedido = pedidoSeleccionado();
 
-        double total = pedido.getTotal();
+        double subtotal = pedido.getTotal();
+        double total = subtotal;
 
         if (promocion != null) {
             total = promocion.aplicarDescuento(
@@ -337,7 +352,11 @@ public class MuzoWaiterGUI extends JFrame {
         };
 
         String metodo = (String) JOptionPane.showInputDialog(
-                this, "Total a cobrar: $" + total,
+                this, String.format(
+                        "Subtotal: $%.2f\n"
+                        + "Descuento: $%.2f\n"
+                        + "Total a cobrar: $%.2f",
+                        subtotal, subtotal - total, total),
                 "Registrar pago",
                 JOptionPane.QUESTION_MESSAGE,
                 null, metodos, metodos[0]);
@@ -347,7 +366,9 @@ public class MuzoWaiterGUI extends JFrame {
         caja.registrarPago(pedido, total, metodo, promocion);
 
         JOptionPane.showMessageDialog(this,
-                "Pago registrado correctamente");
+                String.format(
+                        "Pago registrado correctamente: $%.2f",
+                        total));
     }
 
     private void consultarCaja() {
